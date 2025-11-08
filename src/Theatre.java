@@ -6,13 +6,13 @@ import theatre.Ballet;
 import theatre.Opera;
 import theatre.Show;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Theatre {
 
     public static void main(String[] args) {
 
-        Person vdovin = new Person("Игорь", "Игорь", Gender.MALE);
+        Person vdovin = new Person("Игорь", "Вдовин", Gender.MALE);
         Person mincus = new Person("Людвиг", "Минкус", Gender.MALE);
         Person petipa = new Person("Мариус", "Петипа", Gender.MALE);
 
@@ -25,18 +25,18 @@ public class Theatre {
         Director litvinova = new Director("Рената", "Литвинова", Gender.FEMALE, 6);
 
         // пункт 2
-        HashMap<String, Actor> actorsMapCargo = new HashMap<>();
-        Show show = new Show("Груз 200", 89, balabanov, actorsMapCargo);
+        ArrayList<Actor> actorsCargo = new ArrayList<>();
+        Show show = new Show("Груз 200", 89, balabanov, actorsCargo);
 
-        HashMap<String, Actor> actorsMapWind = new HashMap<>();
-        Opera opera = new Opera("Северный ветер", 123, litvinova, actorsMapWind, vdovin,
+        ArrayList<Actor> actorsWind = new ArrayList<>();
+        Opera opera = new Opera("Северный ветер", 123, litvinova, actorsWind, vdovin,
                 "Северный ветер, он — как любовь. Не поймешь, откуда приходит. " +
                         "А когда он исчезает, ты остаешься один с этим ощущением. " +
                         "Ты не можешь его забыть.", 1);
 
-        HashMap<String, Actor> actorsMapDon = new HashMap<>();
+        ArrayList<Actor> actorsDon = new ArrayList<>();
         Ballet ballet = new Ballet("Дон Кихот", 140,
-                balabanov, actorsMapDon, mincus, "музыка", petipa);
+                balabanov, actorsDon, mincus, "музыка", petipa);
 
         // пункт 3
         show.addActor(polyanyan);
@@ -67,8 +67,8 @@ public class Theatre {
 
         // пункт 7
         System.out.println("\n");
-        System.out.println(opera.getLibrettoText());
+        opera.printLibrettoText();
         System.out.println("\n");
-        System.out.println(ballet.getLibrettoText());
+        ballet.printLibrettoText();
     }
 }

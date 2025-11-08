@@ -11,10 +11,6 @@ public class Person {
         this.gender = gender;
     }
 
-    public Gender getGender() {
-        return gender;
-    }
-
     public String getSurname() {
         return surname;
     }
